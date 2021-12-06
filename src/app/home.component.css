@@ -1,0 +1,85 @@
+.heading {
+    width: 100%;
+    margin-block-start: 30px;
+    margin-block-end: 20px;
+}
+
+.block-colour {
+    width: 100%;
+    height: 250px;
+    background-color: #f4f4f4;
+    margin-block-start: 40px;
+    margin-block-end: 40px;
+    border-radius: 10px;
+}
+
+.border-colour {
+    width: 100%;
+    height: 250px;
+    border: 1px solid #f4f4f4;
+    margin-block-start: 40px;
+    margin-block-end: 40px;
+    border-radius: 10px;
+}
+
+.l-img-container {
+    width: 25%;
+    height: 250px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.r-txt-container {
+    width: 75%;
+    height: 250px;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.l-txt-container {
+    width: 75%;
+    height: 250px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.r-img-container {
+    width: 25%;
+    height: 250px;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.txt-content {
+    width: 90%;
+    margin: auto;
+}
+
+.card-title {
+    font-size: 18px !important;
+    color: #58575c !important;
+    margin-block-end: 10px;
+}
+
+.info-para {
+    width: 100%;
+    margin-block-end: 20px;
+}
+
+.action-btn {
+    width: 25%;
+    border-radius: 15px;
+    background: #34323f;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.player-img {
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,109 @@
+<div class="heading">
+    <p class="page-title">Players</p>
+</div>
+
+<div class="pagination-container">
+    <div class="back-btn-container">
+        <div class="action-btn-container text-start">
+            <button (click)="backPage()" class="action-btn">
+              <div class="btn-txt">
+                  <span class="fas fa-angle-double-left icon-spacing-back"></span>
+                  <span>BACK</span>
+              </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="next-btn-container">
+        <div class="action-btn-container text-end">
+            <button (click)="nextPage()" class="action-btn">
+              <div class="btn-txt">
+                  <span>NEXT</span>
+                  <span class="fas fa-angle-double-right icon-spacing-next"></span>
+              </div>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="card-holder">
+    <div *ngFor="let player of player_list | async">
+        <!-- Check weather player is outfields or Goalkeeper-->
+        <ng-container *ngIf="player.club_position == 'GK'; then goalkeeperCard; else outfieldCard"></ng-container>
+        <!-- goalkeeper -->
+        <ng-template #goalkeeperCard>
+            <div class="card-container" [routerLink]="['/players', player._id]">
+                <div class="fifa-card goalkeeper">
+                    <div class="player-rating stat-font">{{ player.overall }}</div>
+
+                    <div class="player-position stat-font">{{ player.club_position }}</div>
+
+                    <div class="player-country fifa-img stat-font">
+                        <div class="nationality-align">
+                            <img [src]="player.nation_flag_url" [alt]="player.nationality_name" class="nationality">
+                        </div>
+                    </div>
+
+                    <div class="player-club stat-font">
+                        <div class="club-align">
+                            <img [src]="player.club_logo_url" [alt]="player.club_name" class="club">
+                        </div>
+                    </div>
+
+                    <div class="player-photo stat-font">
+                        <div class="player-img">
+                            <img [src]="player.player_face_url" [alt]="player.short_name" class="photo">
+                        </div>
+                    </div>
+
+                    <div class="player-name stat-font">{{ player.short_name }}</div>
+
+                    <div class="player-pace stat-font">{{ player.goalkeeping_diving }}</div>
+                    <div class="player-shooting stat-font">{{ player.goalkeeping_handling }}</div>
+                    <div class="player-passing stat-font">{{ player.goalkeeping_kicking }}</div>
+                    <div class="player-dribbling stat-font">{{ player.goalkeeping_reflexes }}</div>
+                    <div class="player-defending stat-font">{{ player.goalkeeping_speed }}</div>
+                    <div class="player-physical stat-font">{{ player.goalkeeping_positioning }}</div>
+                </div>
+            </div>
+        </ng-template>
+
+        <!-- outfield player -->
+        <ng-template #outfieldCard>
+            <div class="card-container" [routerLink]="['/players', player._id]">
+                <div class="fifa-card outfield">
+                    <div class="player-rating stat-font">{{ player.overall }}</div>
+
+                    <div class="player-position stat-font">{{ player.club_position }}</div>
+
+                    <div class="player-country fifa-img stat-font">
+                        <div class="nationality-align">
+                            <img [src]="player.nation_flag_url" [alt]="player.nationality_name" class="nationality">
+                        </div>
+                    </div>
+
+                    <div class="player-club fifa-img stat-font">
+                        <div class="club-align">
+                            <img [src]="player.club_logo_url" [alt]="player.club_name" class="club">
+                        </div>
+                    </div>
+
+                    <div class="player-photo stat-font">
+                        <div class="player-img">
+                            <img [src]="player.player_face_url" [alt]="player.short_name" class="photo">
+                        </div>
+                    </div>
+
+                    <div class="player-name stat-font">{{ player.short_name }}</div>
+
+                    <div class="player-pace stat-font">{{ player.pace }}</div>
+                    <div class="player-shooting stat-font">{{ player.shooting }}</div>
+                    <div class="player-passing stat-font">{{ player.passing }}</div>
+                    <div class="player-dribbling stat-font">{{ player.dribbling }}</div>
+                    <div class="player-defending stat-font">{{ player.defending }}</div>
+                    <div class="player-physical stat-font">{{ player.physic }}</div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

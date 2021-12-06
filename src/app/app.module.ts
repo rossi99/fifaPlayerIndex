@@ -2,15 +2,38 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { PlayersComponent } from './players.component';
+import { PlayerComponent } from './player.component';
+import { HomeComponent } from './home.component';
+
+import { WebService } from './web.service';
+import { HttpClientModule } from '@angular/common/http';
+
+import { RouterModule } from '@angular/router';
+
+var routes: any = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'players',
+    component: PlayersComponent
+  },
+  {
+    path: 'players/:id',
+    component: PlayerComponent
+  },
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, PlayersComponent, HomeComponent, PlayerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule, RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [WebService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

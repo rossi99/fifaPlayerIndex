@@ -1,0 +1,240 @@
+.heading {
+    width: 100%;
+    margin-block-start: 30px;
+    margin-block-end: 20px;
+}
+
+.pagination-container {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn-container {
+    width: 50%;
+    height: 40px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.next-btn-container {
+    width: 50%;
+    height: 40px;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.action-btn-container {
+    width: 100%;
+}
+
+.action-btn {
+    width: 25%;
+    border: none;
+    border-radius: 15px;
+    background: #34323f;
+    color: white;
+}
+
+.icon-spacing-back {
+    margin-inline-end: 10px;
+}
+
+.icon-spacing-next {
+    margin-inline-start: 10px;
+}
+
+.btn-txt {
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
+
+.card-holder {
+    width: 100%;
+}
+
+.card-container {
+    width: 25%;
+    float: left;
+}
+
+.fifa-card {
+    width: 200px;
+    height: 286px;
+    margin: auto;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    color: #4d3321;
+}
+
+.fifa-card:hover {
+    cursor: pointer;
+}
+
+.fifa-img {
+    display: flex;
+    align-items: center;
+}
+
+.outfield {
+    background-image: url('./card/outfield-card.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.goalkeeper {
+    background-image: url('./card/goalkeeper-card.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.stat-font {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 300;
+}
+
+.player-rating {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 54px;
+    top: 37px;
+    font-size: 25px;
+    font-weight: 1000;
+}
+
+.player-position {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 54px;
+    top: 65px;
+}
+
+.player-country {
+    width: 35px;
+    height: 21px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 54px;
+    top: 88px;
+}
+
+.nationality-align {
+    width: 100%;
+    height: 21px;
+    text-align: center;
+}
+
+.nationality {
+    height: 15px;
+}
+
+.player-club {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 54px;
+    top: 112px;
+}
+
+.club-align {
+    width: 100%;
+    height: 25px;
+    text-align: center;
+}
+
+.club {
+    height: 100%;
+}
+
+.player-photo {
+    width: 110px;
+    height: 90px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 126px;
+    top: 60px;
+}
+
+.player-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.photo {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.player-name {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    top: 151px;
+    width: 150px;
+    height: 24px;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+.player-pace {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50px;
+    top: 178px;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.player-shooting {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50px;
+    top: 196px;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.player-passing {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50px;
+    top: 215px;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.player-dribbling {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 124px;
+    top: 178px;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.player-defending {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 124px;
+    top: 196px;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.player-physical {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 124px;
+    top: 215px;
+    font-weight: 200;
+    font-size: 15px;
+}

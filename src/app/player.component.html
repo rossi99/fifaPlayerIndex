@@ -1,0 +1,468 @@
+<div *ngFor="let player of player_list | async">
+    <div class="heading">
+        <p class="page-title">{{ player.short_name }}'s Player Page</p>
+    </div>
+
+    <div class="card-holder">
+        <ng-container *ngIf="player.club_position == 'GK'; then goalkeeperCard; else outfieldCard"></ng-container>
+        <!-- goalkeeper -->
+        <ng-template #goalkeeperCard>
+            <div class="fifa-card goalkeeper">
+                <div class="player-rating stat-font">{{ player.overall }}</div>
+
+                <div class="player-position stat-font">{{ player.club_position }}</div>
+
+                <div class="player-country fifa-img stat-font">
+                    <div class="nationality-align">
+                        <img [src]="player.nation_flag_url" [alt]="player.nationality_name" class="nationality">
+                    </div>
+                </div>
+
+                <div class="player-club stat-font">
+                    <div class="club-align">
+                        <img [src]="player.club_logo_url" [alt]="player.club_name" class="club">
+                    </div>
+                </div>
+
+                <div class="player-photo stat-font">
+                    <div class="player-img">
+                        <img [src]="player.player_face_url" [alt]="player.short_name" class="photo">
+                    </div>
+                </div>
+
+                <div class="player-name stat-font">
+                    <div class="name-align">
+                        <p>{{ player.short_name }}</p>
+                    </div>
+                </div>
+
+                <div class="player-pace stat-font">{{ player.goalkeeping_diving }}</div>
+                <div class="player-shooting stat-font">{{ player.goalkeeping_handling }}</div>
+                <div class="player-passing stat-font">{{ player.goalkeeping_kicking }}</div>
+                <div class="player-dribbling stat-font">{{ player.goalkeeping_reflexes }}</div>
+                <div class="player-defending stat-font">{{ player.goalkeeping_speed }}</div>
+                <div class="player-physical stat-font">{{ player.goalkeeping_positioning }}</div>
+            </div>
+        </ng-template>
+
+        <!-- outfield player -->
+        <ng-template #outfieldCard>
+            <div class="fifa-card outfield">
+                <div class="player-rating stat-font">{{ player.overall }}</div>
+
+                <div class="player-position stat-font">{{ player.club_position }}</div>
+
+                <div class="player-country fifa-img stat-font">
+                    <div class="nationality-align">
+                        <img [src]="player.nation_flag_url" [alt]="player.nationality_name" class="nationality">
+                    </div>
+                </div>
+
+                <div class="player-club fifa-img stat-font">
+                    <div class="club-align">
+                        <img [src]="player.club_logo_url" [alt]="player.club_name" class="club">
+                    </div>
+                </div>
+
+                <div class="player-photo stat-font">
+                    <div class="player-img">
+                        <img [src]="player.player_face_url" [alt]="player.short_name" class="photo">
+                    </div>
+                </div>
+
+                <div class="player-name stat-font">
+                    <div class="name-align">
+                        <p>{{ player.short_name }}</p>
+                    </div>
+                </div>
+
+                <div class="player-pace stat-font">{{ player.pace }}</div>
+                <div class="player-shooting stat-font">{{ player.shooting }}</div>
+                <div class="player-passing stat-font">{{ player.passing }}</div>
+                <div class="player-dribbling stat-font">{{ player.dribbling }}</div>
+                <div class="player-defending stat-font">{{ player.defending }}</div>
+                <div class="player-physical stat-font">{{ player.physic }}</div>
+            </div>
+        </ng-template>
+    </div>
+
+    <div class="all-stats-container glass-effect">
+        <ng-container *ngIf="player.club_position == 'GK'; then goalkeeperStats; else outfieldStats"></ng-container>
+
+        <ng-template #goalkeeperStats>
+            <div class="gk-stats-container">
+                <!-- DIVING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>DIVING - {{ player.goalkeeping_diving }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Diving</div>
+                        <div class="row-value">{{ player.goalkeeping_diving }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gk-stats-container">
+                <!-- HANDLING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>HANDLING - {{ player.goalkeeping_handling }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">HANDLING</div>
+                        <div class="row-value">{{ player.goalkeeping_handling }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gk-stats-container">
+                <!-- KICKING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>KICKING - {{ player.goalkeeping_kicking }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Kicking</div>
+                        <div class="row-value">{{ player.goalkeeping_kicking }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gk-stats-container">
+                <!-- REFLEXES -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>REFLEXES - {{ player.goalkeeping_reflexes }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Reflexes</div>
+                        <div class="row-value">{{ player.goalkeeping_reflexes }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gk-stats-container">
+                <!-- SPEED -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>SPEED - {{ player.goalkeeping_speed }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Acceleration</div>
+                        <div class="row-value">{{ player.movement_acceleration }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Sprint Speed</div>
+                        <div class="row-value">{{ player.movement_sprint_speed }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gk-stats-container">
+                <!-- POSITIONING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>POSITIONING - {{ player.goalkeeping_positioning }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Positioning</div>
+                        <div class="row-value">{{ player.goalkeeping_positioning }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearFix"></div>
+        </ng-template>
+
+        <ng-template #outfieldStats>
+            <div class="stats-container">
+                <!-- PACE -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>PACE - {{ player.pace }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Acceleration</div>
+                        <div class="row-value">{{ player.movement_acceleration }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Sprint Speed</div>
+                        <div class="row-value">{{ player.movement_sprint_speed }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- SHOOTING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>SHOOTING - {{ player.shooting }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Positioning</div>
+                        <div class="row-value">{{ player.mentality_positioning }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Finishing</div>
+                        <div class="row-value">{{ player.attacking_finishing }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Shot Power</div>
+                        <div class="row-value">{{ player.power_shot_power }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Long Shots</div>
+                        <div class="row-value">{{ player.power_long_shots }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Volleys</div>
+                        <div class="row-value">{{ player.attacking_volleys }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Penalties</div>
+                        <div class="row-value">{{ player.mentality_penalties }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- PASSING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>PASSING - {{ player.passing }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Vision</div>
+                        <div class="row-value">{{ player.mentality_vision }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Crossing</div>
+                        <div class="row-value">{{ player.attacking_crossing }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Free Kick Accuracy</div>
+                        <div class="row-value">{{ player.skill_fk_accuracy }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Short Passing</div>
+                        <div class="row-value">{{ player.attacking_short_passing }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Long Passing</div>
+                        <div class="row-value">{{ player.skill_long_passing }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Curve</div>
+                        <div class="row-value">{{ player.skill_curve }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- DRIBBLING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>DRIBBLING - {{ player.dribbling }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Agility</div>
+                        <div class="row-value">{{ player.movement_agility }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Balance</div>
+                        <div class="row-value">{{ player.movement_balance }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Reactions</div>
+                        <div class="row-value">{{ player.movement_reactions }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Ball Control</div>
+                        <div class="row-value">{{ player.skill_ball_control }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Dribbling</div>
+                        <div class="row-value">{{ player.skill_dribbling }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Composure</div>
+                        <div class="row-value">{{ player.mentality_composure }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- DEFENDING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>DEFENDING - {{ player.defending }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Interceptions</div>
+                        <div class="row-value">{{ player.mentality_interceptions }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Heading Accuracy</div>
+                        <div class="row-value">{{ player.attacking_heading_accuracy }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Defensive Awareness</div>
+                        <div class="row-value">{{ player.defending_marking_awareness }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Standing Tackle</div>
+                        <div class="row-value">{{ player.defending_standing_tackle }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Sliding Tackle</div>
+                        <div class="row-value">{{ player.defending_sliding_tackle }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- PHYSICAL -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>PHYSICAL - {{ player.physic }}</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Jumping</div>
+                        <div class="row-value">{{ player.power_jumping }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Stamina</div>
+                        <div class="row-value">{{ player.power_stamina }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Strength</div>
+                        <div class="row-value">{{ player.power_strength }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Aggression</div>
+                        <div class="row-value">{{ player.mentality_aggression }}</div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearFix"></div>
+        </ng-template>
+    </div>
+
+    <div class="action-container">
+        <div class="return-container">
+            <div class="action-btn" [routerLink]="['/players']">
+                <div class="text-align">
+                    <p>RETURN</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="see-reviews-container">
+            <div class="action-btn right-btn">
+                <div class="text-align">
+                    <p>SEE REVIEWS</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearFix"></div>
+    </div>
+</div>
