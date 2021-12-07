@@ -527,7 +527,7 @@
                                 <label for="name" class="form-label">Name:</label>
                             </div>
 
-                            <div class="input-bg">
+                            <div class="input-bg" [ngClass]="{ 'error-input' : isInvalid('name') }">
                                 <input type="text" id="name" name="name" class="form-input" formControlName="name" placeholder="Please enter a username">
                             </div>
 
@@ -543,7 +543,7 @@
                                 <label for="review" class="form-label">Review:</label>
                             </div>
 
-                            <div class="input-bg">
+                            <div class="input-bg" [ngClass]="{ 'error-input' : isInvalid('review') }">
                                 <input type="text" id="review" name="review" class="form-input" formControlName="review" placeholder="Please leave your review">
                             </div>
 
@@ -576,7 +576,11 @@
             </div>
 
             <div class="form-actions">
-                <div class="submit-btn-container">
+                <div *ngIf="isIncomplete()" class="incomplete-message-container">
+                    <p class="incomplete-message">Ensure All Feilds Have Been Populated</p>
+                </div>
+
+                <div class="submit-btn-container" *ngIf="!isIncomplete()">
                     <button type="submit" class="submit-btn">ADD REVIEW</button>
                 </div>
             </div>

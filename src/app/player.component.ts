@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WebService } from './web.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'player',
@@ -28,8 +28,8 @@ export class PlayerComponent {
 
   ngOnInit() {
     this.reviewForm = this.formBuilder.group({
-      name: '',
-      review: '',
+      name: ['', Validators.required],
+      review: ['', Validators.required],
       stars: 5
     });
 
@@ -38,7 +38,19 @@ export class PlayerComponent {
   }
 
   onSubmit() {
-    console.log(this.reviewForm.value)
+    console.log(this.reviewForm.valid)
+  }
+
+  isInvalid(control: any) {
+    return this.reviewForm.controls[control].invalid && this.reviewForm.controls[control].touched;
+  }
+
+  isUnTouched() {
+    return this.reviewForm.controls.name.pristine || this.reviewForm.controls.review.pristine;
+  }
+
+  isIncomplete() {
+    return this.isInvalid('name') || this.isInvalid('review') || this.isUnTouched();
   }
 
   player_list: any = [];

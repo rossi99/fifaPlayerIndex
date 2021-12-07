@@ -432,9 +432,9 @@
 
 .submit-btn-container {
     width: 20%;
-    padding-block-end: 20px;
-    float: right;
+    padding-block-start: 30px;
     margin-inline-end: 20px;
+    float: right;
 }
 
 .submit-btn {
@@ -444,4 +444,20 @@
     border-radius: 15px;
     background: #34323f;
     color: white;
+}
+
+.error-input {
+    background-color: #f8d7da !important;
+    border: 1px solid #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+.incomplete-message-container {
+    width: 100%;
+    text-align: center;
+    padding-block-end: 20px;
+}
+
+.incomplete-message {
+    color: #afafaf;
 }
