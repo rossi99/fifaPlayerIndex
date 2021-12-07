@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WebService } from './web.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'player',
@@ -21,11 +22,23 @@ export class PlayerComponent {
   random_img = Math.floor(Math.random() * this.reviewer_img.length)
   selected_img = this.reviewer_img[this.random_img]
 
-  constructor(public webService: WebService, private route: ActivatedRoute) {}
+  constructor(public webService: WebService, private route: ActivatedRoute, private formBuilder: FormBuilder) {}
+
+  reviewForm: any;
 
   ngOnInit() {
+    this.reviewForm = this.formBuilder.group({
+      name: '',
+      review: '',
+      stars: 5
+    });
+
     this.player_list = this.webService.getPlayer(this.route.snapshot.params['id']);
     this.reviews = this.webService.getReviews(this.route.snapshot.params['id']);
+  }
+
+  onSubmit() {
+    console.log(this.reviewForm.value)
   }
 
   player_list: any = [];

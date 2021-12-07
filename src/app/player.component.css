@@ -210,7 +210,7 @@
     width: 90%;
     border-radius: 10px;
     margin: auto;
-    margin-block-end: 70px;
+    margin-block-end: 150px;
 }
 
 .stats-container {
@@ -309,8 +309,8 @@
 
 .all-reviews-container {
     width: 100%;
-    margin-block-start: 20px;
-    margin-block-end: 50px;
+    margin-block-start: 50px;
+    margin-block-end: 150px;
 }
 
 .review-row {
@@ -352,15 +352,96 @@
 }
 
 .review-rating-container {
-    width: calc(30% - 10px);
+    width: calc(30% - 15px);
     height: 70px;
     display: flex;
     align-items: center;
     float: right;
-    margin-inline-end: 10px;
+    margin-inline-end: 15px;
 }
 
 .rating-star-align {
     width: 100%;
     text-align: right;
+}
+
+
+/* Forms */
+
+.form-container {
+    width: 100%;
+    margin-block-start: 50px;
+    margin-block-end: 150px;
+}
+
+.form {
+    width: 90%;
+    margin: auto;
+    margin-block-start: 40px;
+    margin-block-end: 40px;
+}
+
+.form-row {
+    width: 90%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.form-data {
+    width: 100%;
+}
+
+.form-label {
+    margin-inline-end: 10px;
+    width: 90px;
+}
+
+.label-bg {
+    width: 100px;
+    height: 50px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.input-bg {
+    width: calc(100% - 100px);
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #eeeeee;
+    float: left;
+    float: left;
+    display: flex;
+}
+
+.form-input {
+    width: 95%;
+    margin: auto;
+    border: none;
+    background: none;
+    letter-spacing: 1px;
+}
+
+.form-actions {
+    width: 100%;
+    margin-block-start: 20px;
+}
+
+.submit-btn-container {
+    width: 20%;
+    padding-block-end: 20px;
+    float: right;
+    margin-inline-end: 20px;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background: #34323f;
+    color: white;
 }
