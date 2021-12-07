@@ -16,6 +16,9 @@
     text-align: center;
 }
 
+
+/* Card */
+
 .fifa-card {
     width: 300px;
     height: 429px;
@@ -200,6 +203,9 @@
     font-size: 22px;
 }
 
+
+/* Stats */
+
 .all-stats-container {
     width: 90%;
     border-radius: 10px;
@@ -296,4 +302,65 @@
 .text-align {
     width: 100%;
     text-align: center;
+}
+
+
+/* Reviews */
+
+.all-reviews-container {
+    width: 100%;
+    margin-block-start: 20px;
+    margin-block-end: 50px;
+}
+
+.review-row {
+    width: 90%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-block-start: 40px;
+    margin-block-end: 40px;
+}
+
+.review-content {
+    width: 100%;
+}
+
+.reviewer-pic-container {
+    width: 10%;
+    float: left;
+}
+
+.reviewer-pic {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+}
+
+.review-data-container {
+    width: calc(60% - 10px);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    float: left;
+    margin-inline-start: 10px;
+}
+
+.reviewer-name {
+    font-weight: bolder;
+}
+
+.review-rating-container {
+    width: calc(30% - 10px);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-inline-end: 10px;
+}
+
+.rating-star-align {
+    width: 100%;
+    text-align: right;
 }

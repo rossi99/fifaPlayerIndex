@@ -445,24 +445,69 @@
             <div class="clearFix"></div>
         </ng-template>
     </div>
+</div>
 
-    <div class="action-container">
-        <div class="return-container">
-            <div class="action-btn" [routerLink]="['/players']">
-                <div class="text-align">
-                    <p>RETURN</p>
+<div class="heading">
+    <p class="page-title">Reviews</p>
+</div>
+
+<div class="all-reviews-container">
+    <div *ngFor="let review of reviews | async">
+        <div class="review-row glass-effect">
+            <div class="review-content">
+                <div class="reviewer-pic-container">
+                    <div class="reviewer-pic">
+                        <img [src]="selected_img" alt="Reviewer Avatar" style="width: 100%;">
+                    </div>
+                </div>
+
+                <div class="review-data-container">
+                    <div class="flex-align">
+                        <div class="reviewer-name">{{ review.username }}</div>
+                        <div class="review-comment">{{ review.comments }}</div>
+                    </div>
+                </div>
+
+                <div class="review-rating-container">
+                    <div class="rating-star-align">
+                        <ng-container *ngIf="review.rating == '1'; then OneStarReview;"></ng-container>
+                        <ng-container *ngIf="review.rating == '2'; then TwoStarReview;"></ng-container>
+                        <ng-container *ngIf="review.rating == '3'; then ThreeStarReview;"></ng-container>
+                        <ng-container *ngIf="review.rating == '4'; then FourStarReview;"></ng-container>
+                        <ng-container *ngIf="review.rating == '5'; then FiveStarReview;"></ng-container>
+
+                        <ng-template #OneStarReview>
+                            <span class="fas fa-star icon-spacing"></span>
+                        </ng-template>
+
+                        <ng-template #TwoStarReview>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                        </ng-template>
+
+                        <ng-template #ThreeStarReview>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                        </ng-template>
+
+                        <ng-template #FourStarReview>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                        </ng-template>
+
+                        <ng-template #FiveStarReview>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                            <span class="fas fa-star icon-spacing"></span>
+                        </ng-template>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="see-reviews-container">
-            <div class="action-btn right-btn">
-                <div class="text-align">
-                    <p>SEE REVIEWS</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="clearFix"></div>
     </div>
 </div>
