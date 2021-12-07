@@ -38,7 +38,11 @@ export class PlayerComponent {
   }
 
   onSubmit() {
-    console.log(this.reviewForm.valid)
+    this.webService.postReview(this.reviewForm.value)
+      .subscribe((response: any) => {
+        this.reviewForm.reset();
+        this.reviews = this.webService.getReviews(this.route.snapshot.params['id'])
+      });
   }
 
   isInvalid(control: any) {
