@@ -12,6 +12,10 @@
     margin-block-end: 75px;
 }
 
+.player-row:hover {
+    cursor: pointer;
+}
+
 .content-align {
     width: 100%;
     text-align: center;
