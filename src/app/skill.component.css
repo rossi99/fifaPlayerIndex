@@ -1,0 +1,120 @@
+.heading {
+    width: 100%;
+    margin-block-start: 30px;
+    margin-block-end: 20px;
+}
+
+.player-row {
+    width: 90%;
+    height: 75px;
+    margin: auto;
+    margin-block-start: 75px;
+    margin-block-end: 75px;
+}
+
+.content-align {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Text */
+
+.p-txt {
+    font-variant: small-caps;
+    font-size: 13px;
+    color: grey;
+}
+
+
+/* overall */
+
+.player-overall-container {
+    width: calc(100% / 7);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.p-overall {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+
+/* img */
+
+.player-img-container {
+    width: calc(100% / 7);
+    height: 75px;
+    float: left;
+}
+
+.p-face {
+    height: 75px;
+}
+
+
+/* name */
+
+.player-name-container {
+    width: calc(100% / 7);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+
+/* club */
+
+.player-club-container {
+    width: calc(100% / 7);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.p-club {
+    height: 50px;
+}
+
+
+/* nation */
+
+.player-nation-container {
+    width: calc(100% / 7);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.p-nation {
+    height: 30px;
+}
+
+
+/* skills */
+
+.player-skills-container {
+    width: calc(100% / 7);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+
+/* weak foot */
+
+.player-wf-container {
+    width: calc(100% / 7);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}

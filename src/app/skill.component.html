@@ -1,0 +1,73 @@
+<div class="heading">
+    <p class="page-title">The Most Skilled Players</p>
+</div>
+
+<div *ngFor="let player of player_list | async">
+    <div class="player-row glass-effect" [routerLink]="['/players', player._id]">
+        <!-- Holds player overall -->
+        <div class="player-overall-container">
+            <div class="content-align">
+                <div class="p-overall">{{ player.overall }}</div>
+                <div class="p-txt">overall</div>
+            </div>
+        </div>
+
+        <!-- Holds player image -->
+        <div class="player-img-container">
+            <div class="content-align">
+                <img [src]="player.player_face_url" [alt]="player.short_name" class="p-face">
+            </div>
+        </div>
+
+        <!-- Holds player name -->
+        <div class="player-name-container">
+            <div class="content-align">
+                <div class="p-name">{{ player.short_name }}</div>
+            </div>
+        </div>
+
+        <!-- Holds player club -->
+        <div class="player-club-container">
+            <div class="content-align">
+                <img [src]="player.club_logo_url" [alt]="player.club_name" class="p-club">
+            </div>
+        </div>
+
+        <!-- Holds player nation -->
+        <div class="player-nation-container">
+            <div class="content-align">
+                <img [src]="player.nation_flag_url" [alt]="player.nationality_name" class="p-nation">
+            </div>
+        </div>
+
+        <!-- Holds player skills -->
+        <div class="player-skills-container">
+            <div class="content-align">
+                <div class="p-sm">
+                    <span>{{ player.skill_moves }}</span>
+                    <span class="fas fa-star icon-spacing"></span>
+                </div>
+
+                <div class="p-txt">
+                    skill moves
+                </div>
+            </div>
+        </div>
+
+        <!-- Holds player weak foot -->
+        <div class="player-wf-container">
+            <div class="content-align">
+                <div class="p-wf">
+                    <span>{{ player.weak_foot }}</span>
+                    <span class="fas fa-star icon-spacing"></span>
+                </div>
+
+                <div class="p-txt">
+                    weak foot
+                </div>
+            </div>
+        </div>
+
+        <div class="clearFix"></div>
+    </div>
+</div>

@@ -34,4 +34,8 @@ export class WebService {
 
     return this.http.post('http://localhost:5000/api/v1.0/players/' + this.playerID + '/reviews', postData);
   }
+
+  getSkilledPlayers() {
+    return this.http.get('http://localhost:5000/api/v1.0/skilled-players');
+  }
 }

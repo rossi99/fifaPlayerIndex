@@ -80,14 +80,14 @@
 }
 
 .outfield {
-    background-image: url('./card/outfield-card.png');
+    background-image: url('./card/outfield/basic.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
 }
 
 .goalkeeper {
-    background-image: url('./card/goalkeeper-card.png');
+    background-image: url('./card/goalkeeper/basic.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
