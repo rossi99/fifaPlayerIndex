@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -6,6 +6,7 @@ import { PlayersComponent } from './players.component';
 import { PlayerComponent } from './player.component';
 import { HomeComponent } from './home.component';
 import { SkillComponent } from './skill.component';
+import { LoyalComponent } from './loyal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { WebService } from './web.service';
@@ -30,12 +31,15 @@ var routes: any = [
     path: 'skilled-players',
     component: SkillComponent
   },
-
+  {
+    path: 'loyal-players',
+    component: LoyalComponent
+  },
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, PlayersComponent, HomeComponent, PlayerComponent, SkillComponent
+    AppComponent, PlayersComponent, HomeComponent, PlayerComponent, SkillComponent, LoyalComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), ReactiveFormsModule

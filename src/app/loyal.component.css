@@ -1,0 +1,164 @@
+.heading {
+    width: 100%;
+    margin-block-start: 30px;
+    margin-block-end: 20px;
+}
+
+.player-row {
+    width: 90%;
+    height: 75px;
+    margin: auto;
+    margin-block-start: 75px;
+    margin-block-end: 75px;
+}
+
+
+/* Pagination */
+
+.pagination-container {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn-container {
+    width: 50%;
+    height: 40px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.next-btn-container {
+    width: 50%;
+    height: 40px;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.action-btn-container {
+    width: 100%;
+}
+
+.action-btn {
+    width: 25%;
+    border: none;
+    border-radius: 15px;
+    background: #34323f;
+    color: white;
+}
+
+.icon-spacing-back {
+    margin-inline-end: 10px;
+}
+
+.icon-spacing-next {
+    margin-inline-start: 10px;
+}
+
+.btn-txt {
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
+
+.player-row:hover {
+    cursor: pointer;
+}
+
+.content-align {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Text */
+
+.p-txt {
+    font-variant: small-caps;
+    font-size: 13px;
+    color: grey;
+}
+
+
+/* overall */
+
+.player-overall-container {
+    width: calc(100% / 6);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.p-overall {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+
+/* img */
+
+.player-img-container {
+    width: calc(100% / 6);
+    height: 75px;
+    float: left;
+}
+
+.p-face {
+    height: 75px;
+}
+
+
+/* name */
+
+.player-name-container {
+    width: calc(100% / 6);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+
+/* club */
+
+.player-club-container {
+    width: calc(100% / 6);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.p-club {
+    height: 50px;
+}
+
+
+/* nation */
+
+.player-nation-container {
+    width: calc(100% / 6);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.p-nation {
+    height: 30px;
+}
+
+
+/* years */
+
+.player-years-container {
+    width: calc(100% / 6);
+    height: 75px;
+    float: left;
+    display: flex;
+    align-items: center;
+}

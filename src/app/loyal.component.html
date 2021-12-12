@@ -1,0 +1,82 @@
+<div class="heading">
+    <p class="page-title">The Loyal Royals</p>
+</div>
+
+<div class="pagination-container">
+    <div class="back-btn-container">
+        <div class="action-btn-container text-start">
+            <button (click)="backPage()" class="action-btn">
+            <div class="btn-txt">
+                <span class="fas fa-angle-double-left icon-spacing-back"></span>
+                <span>BACK</span>
+            </div>
+          </button>
+        </div>
+    </div>
+
+    <div class="next-btn-container">
+        <div class="action-btn-container text-end">
+            <button (click)="nextPage()" class="action-btn">
+            <div class="btn-txt">
+                <span>NEXT</span>
+                <span class="fas fa-angle-double-right icon-spacing-next"></span>
+            </div>
+          </button>
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let player of player_list | async">
+    <div class="player-row glass-effect" [routerLink]="['/players', player._id]">
+        <!-- Holds player overall -->
+        <div class="player-overall-container">
+            <div class="content-align">
+                <div class="p-overall">{{ player.overall }}</div>
+                <div class="p-txt">overall</div>
+            </div>
+        </div>
+
+        <!-- Holds player image -->
+        <div class="player-img-container">
+            <div class="content-align">
+                <img [src]="player.player_face_url" [alt]="player.short_name" class="p-face">
+            </div>
+        </div>
+
+        <!-- Holds player name -->
+        <div class="player-name-container">
+            <div class="content-align">
+                <div class="p-name">{{ player.short_name }}</div>
+            </div>
+        </div>
+
+        <!-- Holds player club -->
+        <div class="player-club-container">
+            <div class="content-align">
+                <img [src]="player.club_logo_url" [alt]="player.club_name" class="p-club">
+            </div>
+        </div>
+
+        <!-- Holds player nation -->
+        <div class="player-nation-container">
+            <div class="content-align">
+                <img [src]="player.nation_flag_url" [alt]="player.nationality_name" class="p-nation">
+            </div>
+        </div>
+
+        <!-- Holds player skills -->
+        <div class="player-years-container">
+            <div class="content-align">
+                <div class="p-year">
+                    10
+                </div>
+
+                <div class="p-txt">
+                    year at club
+                </div>
+            </div>
+        </div>
+
+        <div class="clearFix"></div>
+    </div>
+</div>

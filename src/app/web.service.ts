@@ -38,4 +38,8 @@ export class WebService {
   getSkilledPlayers() {
     return this.http.get('http://localhost:5000/api/v1.0/skilled-players');
   }
+
+  getLoyalPlayers(page: number) {
+    return this.http.get('http://localhost:5000/api/v1.0/loyal-players?pn=' + page);
+  }
 }
