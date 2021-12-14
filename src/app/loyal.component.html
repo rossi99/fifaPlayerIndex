@@ -4,7 +4,7 @@
 
 <p>These are all the players that have been at thier current club for more than 10 years</p>
 
-<!-- <div class="pagination-container">
+<div class="pagination-container">
     <div class="back-btn-container">
         <div class="action-btn-container text-start">
             <button (click)="loyalBackPage()" class="action-btn">
@@ -26,7 +26,7 @@
           </button>
         </div>
     </div>
-</div> -->
+</div>
 
 <div *ngFor="let player of player_list | async">
     <div class="player-row glass-effect" [routerLink]="['/players', player._id]">
