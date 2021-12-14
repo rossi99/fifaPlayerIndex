@@ -85,7 +85,7 @@
 /* overall */
 
 .player-overall-container {
-    width: calc(100% / 6);
+    width: calc(100% / 5);
     height: 75px;
     float: left;
     display: flex;
@@ -102,7 +102,7 @@
 /* img */
 
 .player-img-container {
-    width: calc(100% / 6);
+    width: calc(100% / 5);
     height: 75px;
     float: left;
 }
@@ -115,7 +115,7 @@
 /* name */
 
 .player-name-container {
-    width: calc(100% / 6);
+    width: calc(100% / 5);
     height: 75px;
     float: left;
     display: flex;
@@ -126,7 +126,7 @@
 /* club */
 
 .player-club-container {
-    width: calc(100% / 6);
+    width: calc(100% / 5);
     height: 75px;
     float: left;
     display: flex;
@@ -141,7 +141,7 @@
 /* nation */
 
 .player-nation-container {
-    width: calc(100% / 6);
+    width: calc(100% / 5);
     height: 75px;
     float: left;
     display: flex;
@@ -156,7 +156,7 @@
 /* years */
 
 .player-years-container {
-    width: calc(100% / 6);
+    width: calc(100% / 5);
     height: 75px;
     float: left;
     display: flex;

@@ -10,24 +10,24 @@ export class LoyalComponent {
   constructor(public webService: WebService) {}
 
   ngOnInit() {
-    if (sessionStorage['page']) {
-      this.page = Number(sessionStorage['page']);
+    if (sessionStorage['loyalPage']) {
+      this.page = Number(sessionStorage['loyalPage']);
     }
 
     this.player_list = this.webService.getLoyalPlayers(this.page);
   }
 
-  backPage() {
+  loyalBackPage() {
     if (this.page > 1) {
       this.page = this.page - 1;
-      sessionStorage['page'] = this.page;
+      sessionStorage['loyalPage'] = this.page;
       this.player_list = this.player_list = this.webService.getLoyalPlayers(this.page);
     }
   }
 
-  nextPage() {
+  loyalNextPage() {
     this.page = this.page + 1;
-    sessionStorage['page'] = this.page;
+    sessionStorage['loyalPage'] = this.page;
     this.player_list = this.player_list = this.webService.getLoyalPlayers(this.page);
   }
 

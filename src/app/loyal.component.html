@@ -2,10 +2,12 @@
     <p class="page-title">The Loyal Royals</p>
 </div>
 
-<div class="pagination-container">
+<p>These are all the players that have been at thier current club for more than 10 years</p>
+
+<!-- <div class="pagination-container">
     <div class="back-btn-container">
         <div class="action-btn-container text-start">
-            <button (click)="backPage()" class="action-btn">
+            <button (click)="loyalBackPage()" class="action-btn">
             <div class="btn-txt">
                 <span class="fas fa-angle-double-left icon-spacing-back"></span>
                 <span>BACK</span>
@@ -16,7 +18,7 @@
 
     <div class="next-btn-container">
         <div class="action-btn-container text-end">
-            <button (click)="nextPage()" class="action-btn">
+            <button (click)="loyalNextPage()" class="action-btn">
             <div class="btn-txt">
                 <span>NEXT</span>
                 <span class="fas fa-angle-double-right icon-spacing-next"></span>
@@ -24,7 +26,7 @@
           </button>
         </div>
     </div>
-</div>
+</div> -->
 
 <div *ngFor="let player of player_list | async">
     <div class="player-row glass-effect" [routerLink]="['/players', player._id]">
@@ -61,19 +63,6 @@
         <div class="player-nation-container">
             <div class="content-align">
                 <img [src]="player.nation_flag_url" [alt]="player.nationality_name" class="p-nation">
-            </div>
-        </div>
-
-        <!-- Holds player skills -->
-        <div class="player-years-container">
-            <div class="content-align">
-                <div class="p-year">
-                    10
-                </div>
-
-                <div class="p-txt">
-                    year at club
-                </div>
             </div>
         </div>
 
