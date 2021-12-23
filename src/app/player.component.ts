@@ -22,8 +22,6 @@ export class PlayerComponent {
 
     this.player_list = this.webService.getPlayer(this.route.snapshot.params['id']);
     this.reviews = this.webService.getReviews(this.route.snapshot.params['id']);
-
-    console.log(this.reviews.username)
   }
 
   onSubmit() {

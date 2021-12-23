@@ -7,6 +7,7 @@ import { PlayerComponent } from './player.component';
 import { HomeComponent } from './home.component';
 import { SkillComponent } from './skill.component';
 import { LoyalComponent } from './loyal.component';
+import { CreatePlayerComponent } from './create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { WebService } from './web.service';
@@ -35,11 +36,15 @@ var routes: any = [
     path: 'loyal-players',
     component: LoyalComponent
   },
+  {
+    path: 'create-player',
+    component: CreatePlayerComponent
+  },
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, PlayersComponent, HomeComponent, PlayerComponent, SkillComponent, LoyalComponent
+    AppComponent, PlayersComponent, HomeComponent, PlayerComponent, SkillComponent, LoyalComponent, CreatePlayerComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), ReactiveFormsModule

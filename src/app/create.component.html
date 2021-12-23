@@ -1,0 +1,489 @@
+<div class="heading">
+    <p class="page-title">Build Your Own Pro Player</p>
+</div>
+
+<form [formGroup]="playerForm" (ngSubmit)="createPlayer()">
+    <div class="player-builder-container">
+        <div class="player-card-section">
+            <div class="fifa-card">
+                <div class="player-rating stat-font">
+                    <div [ngClass]="{ 'error-input' : isInvalid('rating') }">
+                        <input type="text" id="rating" name="rating" class="form-input" formControlName="rating" placeholder="00">
+                    </div>
+                </div>
+
+                <div class="player-position stat-font">
+                    <div [ngClass]="{ 'error-input' : isInvalid('position') }">
+                        <input type="text" id="position" name="position" class="form-input" formControlName="position" placeholder="ST">
+                    </div>
+                </div>
+
+                <div class="player-name stat-font">
+                    <div class="name-align">
+                        <div [ngClass]="{ 'error-input' : isInvalid('name') }">
+                            <input type="text" id="name" name="name" class="form-input" formControlName="name" placeholder="PLAYER NAME">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-pace stat-font">
+                    <div [ngClass]="{ 'error-input' : isInvalid('pace') }">
+                        <input type="text" id="pace" name="pace" class="form-input" formControlName="pace" placeholder="00">
+                    </div>
+                </div>
+
+                <div class="player-shooting stat-font">
+                    <div [ngClass]="{ 'error-input' : isInvalid('shooting') }">
+                        <input type="text" id="shooting" name="shooting" class="form-input" formControlName="shooting" placeholder="00">
+                    </div>
+                </div>
+
+                <div class="player-passing stat-font">
+                    <div [ngClass]="{ 'error-input' : isInvalid('passing') }">
+                        <input type="text" id="passing" name="passing" class="form-input" formControlName="passing" placeholder="00">
+                    </div>
+                </div>
+
+                <div class="player-dribbling stat-font">
+                    <div [ngClass]="{ 'error-input' : isInvalid('dribbling') }">
+                        <input type="text" id="dribbling" name="dribbling" class="form-input" formControlName="dribbling" placeholder="00">
+                    </div>
+                </div>
+
+                <div class="player-defending stat-font">
+                    <div [ngClass]="{ 'error-input' : isInvalid('defending') }">
+                        <input type="text" id="defending" name="defending" class="form-input" formControlName="defending" placeholder="00">
+                    </div>
+                </div>
+
+                <div class="player-physical stat-font">
+                    <div [ngClass]="{ 'error-input' : isInvalid('physic') }">
+                        <input type="text" id="physic" name="physic" class="form-input" formControlName="physic" placeholder="00">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="all-stats-container glass-effect">
+            <div class="stats-container">
+                <!-- PACE -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>PACE</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Acceleration</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('acceleration') }">
+                                <input type="text" id="acceleration" name="acceleration" class="form-input-stats" formControlName="acceleration" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Sprint Speed</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('speed') }">
+                                <input type="text" id="speed" name="speed" class="form-input-stats" formControlName="speed" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- SHOOTING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>SHOOTING</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Positioning</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('positioning') }">
+                                <input type="text" id="positioning" name="positioning" class="form-input-stats" formControlName="positioning" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Finishing</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('finishing') }">
+                                <input type="text" id="finishing" name="finishing" class="form-input-stats" formControlName="finishing" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Shot Power</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('shotPower') }">
+                                <input type="text" id="shotPower" name="shotPower" class="form-input-stats" formControlName="shotPower" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Long Shots</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('longShots') }">
+                                <input type="text" id="longShots" name="longShots" class="form-input-stats" formControlName="longShots" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Volleys</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('volleys') }">
+                                <input type="text" id="volleys" name="volleys" class="form-input-stats" formControlName="volleys" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Penalties</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('penalties') }">
+                                <input type="text" id="penalties" name="penalties" class="form-input-stats" formControlName="penalties" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- PASSING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>PASSING</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Vision</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('vision') }">
+                                <input type="text" id="vision" name="vision" class="form-input-stats" formControlName="vision" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Crossing</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('crossing') }">
+                                <input type="text" id="crossing" name="crossing" class="form-input-stats" formControlName="crossing" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Free Kick Accuracy</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('freeKickAccuracy') }">
+                                <input type="text" id="freeKickAccuracy" name="freeKickAccuracy" class="form-input-stats" formControlName="freeKickAccuracy" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Short Passing</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('shortPassing') }">
+                                <input type="text" id="shortPassing" name="shortPassing" class="form-input-stats" formControlName="shortPassing" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Long Passing</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('longPassing') }">
+                                <input type="text" id="longPassing" name="longPassing" class="form-input-stats" formControlName="longPassing" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Curve</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('curve') }">
+                                <input type="text" id="curve" name="curve" class="form-input-stats" formControlName="curve" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- DRIBBLING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>DRIBBLING</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Agility</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('agility') }">
+                                <input type="text" id="agility" name="agility" class="form-input-stats" formControlName="agility" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Balance</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('balance') }">
+                                <input type="text" id="balance" name="balance" class="form-input-stats" formControlName="balance" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Reactions</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('reactions') }">
+                                <input type="text" id="reactions" name="reactions" class="form-input-stats" formControlName="reactions" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Ball Control</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('ballControl') }">
+                                <input type="text" id="ballControl" name="ballControl" class="form-input-stats" formControlName="ballControl" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Dribbling</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('skillDribbling') }">
+                                <input type="text" id="skillDribbling" name="skillDribbling" class="form-input-stats" formControlName="skillDribbling" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Composure</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('composure') }">
+                                <input type="text" id="composure" name="composure" class="form-input-stats" formControlName="composure" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- DEFENDING -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>DEFENDING</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Interceptions</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('interceptions') }">
+                                <input type="text" id="interceptions" name="interceptions" class="form-input-stats" formControlName="interceptions" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Heading Accuracy</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('headingAccuracy') }">
+                                <input type="text" id="headingAccuracy" name="headingAccuracy" class="form-input-stats" formControlName="headingAccuracy" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Defensive Awareness</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('defensiveAwareness') }">
+                                <input type="text" id="defensiveAwareness" name="defensiveAwareness" class="form-input-stats" formControlName="defensiveAwareness" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Standing Tackle</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('standingTackle') }">
+                                <input type="text" id="standingTackle" name="standingTackle" class="form-input-stats" formControlName="standingTackle" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Sliding Tackle</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('slidingTackle') }">
+                                <input type="text" id="slidingTackle" name="slidingTackle" class="form-input-stats" formControlName="slidingTackle" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <!-- PHYSICAL -->
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>PHYSICAL</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-row">
+                        <div class="row-title">Jumping</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('jumping') }">
+                                <input type="text" id="jumping" name="jumping" class="form-input-stats" formControlName="jumping" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Stamina</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('stamina') }">
+                                <input type="text" id="stamina" name="stamina" class="form-input-stats" formControlName="stamina" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Strength</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('strength') }">
+                                <input type="text" id="strength" name="strength" class="form-input-stats" formControlName="strength" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="row-title">Aggression</div>
+                        <div class="row-value">
+                            <div [ngClass]="{ 'error-input' : isInvalid('aggression') }">
+                                <input type="text" id="aggression" name="aggression" class="form-input-stats" formControlName="aggression" placeholder="00">
+                            </div>
+                        </div>
+                        <div class="clearFix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearFix"></div>
+        </div>
+
+        <div class="all-stats-container glass-effect">
+            <div class="skill-moves-container">
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>SKILL MOVES</p>
+                    </div>
+                </div>
+
+                <select id="skillMoves" name="skillMoves" class="form-select" formControlName="skillMoves">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="weak-foot-container">
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>WEAK FOOT</p>
+                    </div>
+                </div>
+
+                <select id="weakFoot" name="weakFoot" class="form-select" formControlName="weakFoot">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="clearFix"></div>
+        </div>
+
+        <div class="all-stats-container glass-effect">
+            <div class="club-joined-container">
+                <div class="stat-heading">
+                    <div class="sh-align">
+                        <p>CLUB JOINED</p>
+                    </div>
+                </div>
+
+                <div class="date-input-container">
+                    <div [ngClass]="{ 'error-input' : isInvalid('clubJoined') }">
+                        <input type="datetime-local" id="clubJoined" name="clubJoined" class="date-input" formControlName="clubJoined" style="margin-block-end: 20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <div *ngIf="isIncomplete()" class="incomplete-message-container">
+                <p class="incomplete-message">Ensure All Feilds Have Been Populated</p>
+            </div>
+
+            <div class="submit-btn-container" *ngIf="!isIncomplete()">
+                <button type="submit" class="submit-btn">ADD PLAYER</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,260 @@
+.heading {
+    width: 100%;
+    margin-block-start: 30px;
+    margin-block-end: 20px;
+}
+
+.player-builder-container {
+    width: 100%;
+    margin-block-end: 40px;
+}
+
+.player-card-section {
+    width: 100%;
+    margin-block-end: 40px;
+}
+
+.fifa-card {
+    width: 300px;
+    height: 429px;
+    margin: auto;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    background-image: url(./card/create/blank-card.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.stat-font {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 300;
+}
+
+.form-input {
+    border: none;
+    background: none;
+    width: 100%;
+    color: #4d3321;
+    text-align: center;
+}
+
+.form-input-stats {
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: right;
+}
+
+.date-input {
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: center;
+}
+
+.form-select {
+    width: 80%;
+    margin: auto;
+}
+
+.player-rating {
+    width: 32px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 80px;
+    top: 55px;
+    font-size: 35px;
+    font-weight: 1000;
+}
+
+.player-position {
+    width: 25px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 81px;
+    top: 102px;
+    font-size: 20px;
+}
+
+.player-name {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    top: 225px;
+    height: 40px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.player-pace {
+    width: 25px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 75px;
+    top: 267px;
+    font-weight: 200;
+    font-size: 22px;
+}
+
+.player-shooting {
+    width: 25px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 75px;
+    top: 294.5px;
+    font-weight: 200;
+    font-size: 22px;
+}
+
+.player-passing {
+    width: 25px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 75px;
+    top: 322px;
+    font-weight: 200;
+    font-size: 22px;
+}
+
+.player-dribbling {
+    width: 25px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 185px;
+    top: 267px;
+    font-weight: 200;
+    font-size: 22px;
+}
+
+.player-defending {
+    width: 25px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 185px;
+    top: 294.5px;
+    font-weight: 200;
+    font-size: 22px;
+}
+
+.player-physical {
+    width: 25px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 185px;
+    top: 322px;
+    font-weight: 200;
+    font-size: 22px;
+}
+
+
+/* Stats */
+
+.all-stats-container {
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    margin-block-end: 100px;
+}
+
+.stats-container {
+    width: calc(100% / 3);
+    min-height: 300px;
+    max-height: 320px;
+    float: left;
+}
+
+.stat-heading {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-block-end: 5px;
+}
+
+.sh-align {
+    width: 100%;
+    text-align: center;
+}
+
+.stats {
+    width: 100%;
+}
+
+.stat-row {
+    width: 80%;
+    margin: auto;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+}
+
+.row-title {
+    width: 70%;
+    float: left;
+}
+
+.row-value {
+    width: 30%;
+    float: left;
+    text-align: right;
+}
+
+.skill-moves-container {
+    width: 50%;
+    float: left;
+    margin-block-end: 20px;
+}
+
+.weak-foot-container {
+    width: 50%;
+    float: left;
+    margin-block-end: 20px;
+}
+
+.club-joined-container {
+    width: 100%;
+}
+
+.date-input-container {
+    width: 50%;
+    margin: auto;
+}
+
+.form-actions {
+    width: 100%;
+}
+
+.submit-btn-container {
+    width: 100%;
+    margin-inline-end: 40px;
+    text-align: center;
+}
+
+.submit-btn {
+    width: 35%;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    background: #34323f;
+    color: white;
+}
+
+.error-input {
+    background-color: #f8d7da !important;
+    border: 1px solid #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+.incomplete-message-container {
+    width: 100%;
+    text-align: center;
+    padding-block-end: 20px;
+}
+
+.incomplete-message {
+    color: #afafaf;
+}
