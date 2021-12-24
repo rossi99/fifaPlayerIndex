@@ -10,7 +10,7 @@
             </div>
 
             <div class="nav-container">
-                <a [routerLink]="['/']" class="option-link">
+                <a [routerLink]="['/']">
                     <div class="menu-option">
                         <div class="option-text">
                             <p>Home</p>
@@ -18,7 +18,15 @@
                     </div>
                 </a>
 
-                <a [routerLink]="['/players']" class="option-link">
+                <ng-container *ngIf="AuthService.isAuthenticated$ | async;">
+                    <div class="menu-option">
+                        <div class="option-text" *ngIf="AuthService.user$ | async as user">
+                            <p>User: {{ user.name }}</p>
+                        </div>
+                    </div>
+                </ng-container>
+
+                <a [routerLink]="['/players']">
                     <div class="menu-option">
                         <div class="option-text">
                             <p>Players</p>
@@ -26,7 +34,7 @@
                     </div>
                 </a>
 
-                <a [routerLink]="['/skilled-players']" class="option-link">
+                <a [routerLink]="['/skilled-players']">
                     <div class="menu-option">
                         <div class="option-text">
                             <p>Top Talents</p>
@@ -34,7 +42,7 @@
                     </div>
                 </a>
 
-                <a [routerLink]="['/loyal-players']" class="option-link">
+                <a [routerLink]="['/loyal-players']">
                     <div class="menu-option">
                         <div class="option-text">
                             <p>Loyalty Royalty</p>
@@ -42,15 +50,17 @@
                     </div>
                 </a>
 
-                <a [routerLink]="['/create-player']" class="option-link">
-                    <div class="menu-option">
-                        <div class="option-text">
-                            <p>Create A Card</p>
+                <ng-container *ngIf="AuthService.isAuthenticated$ | async;">
+                    <a [routerLink]="['/create-player']">
+                        <div class="menu-option">
+                            <div class="option-text">
+                                <p>Create A Card</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </ng-container>
 
-                <a href="https://www.ea.com/en-gb/games/fifa/fifa-22/buy?gclid=Cj0KCQiAqbyNBhC2ARIsALDwAsCh6RvvXUYk9ZosfSaY7wBjnDOWBtwFGDALkr9mengEV1Ho4ywWNQQaApqYEALw_wcB&gclsrc=aw.ds" class="option-link">
+                <a href="https://www.ea.com/en-gb/games/fifa/fifa-22/buy?gclid=Cj0KCQiAqbyNBhC2ARIsALDwAsCh6RvvXUYk9ZosfSaY7wBjnDOWBtwFGDALkr9mengEV1Ho4ywWNQQaApqYEALw_wcB&gclsrc=aw.ds">
                     <div class="menu-option">
                         <div class="option-text">
                             <p>Store</p>
@@ -58,13 +68,17 @@
                     </div>
                 </a>
 
-                <a href="" class="option-link">
-                    <div class="menu-option">
-                        <div class="option-text">
-                            <p>Login</p>
-                        </div>
+                <ng-container *ngIf="AuthService.isAuthenticated$ | async; else loggedOut">
+                    <div class="option-link">
+                        <button class="menu-btn-option" (click)="AuthService.logout()">Logout</button>
                     </div>
-                </a>
+                </ng-container>
+
+                <ng-template #loggedOut>
+                    <div class="option-link">
+                        <button class="menu-btn-option" (click)="AuthService.loginWithRedirect()">Login</button>
+                    </div>
+                </ng-template>
             </div>
         </div>
     </div>
