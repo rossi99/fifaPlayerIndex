@@ -518,74 +518,83 @@
 
 <div class="form-container">
     <div class="form glass-effect">
-        <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
-            <div class="form-inputs">
-                <div class="form-row">
-                    <div class="form-data">
-                        <div class="form-name">
-                            <div class="label-bg">
-                                <label for="name" class="form-label">Name:</label>
-                            </div>
 
-                            <div class="input-bg" [ngClass]="{ 'error-input' : isInvalid('name') }">
-                                <input type="text" id="name" name="name" class="form-input" formControlName="name" placeholder="Please enter a username">
-                            </div>
+        <ng-container *ngIf="AuthService.isAuthenticated$ | async; else loggedOut">
+            <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+                <div class="form-inputs">
+                    <div class="form-row">
+                        <div class="form-data">
+                            <div class="form-name">
+                                <div class="label-bg">
+                                    <label for="name" class="form-label">Name:</label>
+                                </div>
 
-                            <div class="clearFix"></div>
+                                <div class="input-bg" [ngClass]="{ 'error-input' : isInvalid('name') }">
+                                    <input type="text" id="name" name="name" class="form-input" formControlName="name" placeholder="Please enter a username">
+                                </div>
+
+                                <div class="clearFix"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-row">
-                    <div class="form-data">
-                        <div class="form-review">
-                            <div class="label-bg">
-                                <label for="review" class="form-label">Review:</label>
+                    <div class="form-row">
+                        <div class="form-data">
+                            <div class="form-review">
+                                <div class="label-bg">
+                                    <label for="review" class="form-label">Review:</label>
+                                </div>
+
+                                <div class="input-bg" [ngClass]="{ 'error-input' : isInvalid('review') }">
+                                    <input type="text" id="review" name="review" class="form-input" formControlName="review" placeholder="Please leave your review">
+                                </div>
+
+                                <div class="clearFix"></div>
                             </div>
-
-                            <div class="input-bg" [ngClass]="{ 'error-input' : isInvalid('review') }">
-                                <input type="text" id="review" name="review" class="form-input" formControlName="review" placeholder="Please leave your review">
-                            </div>
-
-                            <div class="clearFix"></div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-row">
-                    <div class="form-data">
-                        <div class="form-rating">
-                            <div class="label-bg">
-                                <label for="rating" class="form-label">Rating:</label>
-                            </div>
+                    <div class="form-row">
+                        <div class="form-data">
+                            <div class="form-rating">
+                                <div class="label-bg">
+                                    <label for="rating" class="form-label">Rating:</label>
+                                </div>
 
-                            <div class="input-bg">
-                                <select id="stars" name="stars" class="form-select" formControlName="stars">
+                                <div class="input-bg">
+                                    <select id="stars" name="stars" class="form-select" formControlName="stars">
                                   <option value="1">1</option>
                                   <option value="2">2</option>
                                   <option value="3">3</option>
                                   <option value="4">4</option>
                                   <option value="5">5</option>
                                 </select>
-                            </div>
+                                </div>
 
-                            <div class="clearFix"></div>
+                                <div class="clearFix"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="form-actions">
-                <div *ngIf="isIncomplete()" class="incomplete-message-container">
-                    <p class="incomplete-message">Ensure All Feilds Have Been Populated</p>
+                <div class="form-actions">
+                    <div *ngIf="isIncomplete()" class="incomplete-message-container">
+                        <p class="incomplete-message">Ensure All Feilds Have Been Populated</p>
+                    </div>
+
+                    <div class="submit-btn-container" *ngIf="!isIncomplete()">
+                        <button type="submit" class="submit-btn">ADD REVIEW</button>
+                    </div>
                 </div>
 
-                <div class="submit-btn-container" *ngIf="!isIncomplete()">
-                    <button type="submit" class="submit-btn">ADD REVIEW</button>
-                </div>
-            </div>
+                <div class="clearfix"></div>
+            </form>
+        </ng-container>
 
-            <div class="clearfix"></div>
-        </form>
+        <ng-template #loggedOut>
+            <div class="incomplete-message-container" style="padding-block-start: 20px;">
+                <p class="incomplete-message">You Must Be Signed In To Leave A Review</p>
+            </div>
+        </ng-template>
     </div>
 </div>

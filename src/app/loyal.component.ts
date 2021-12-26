@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
 import { WebService } from './web.service';
+import { Component } from "@angular/core";
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'loyal',
@@ -7,30 +9,25 @@ import { WebService } from './web.service';
   styleUrls: ['./loyal.component.css']
 })
 export class LoyalComponent {
+  subscriptions: Subscription[] = [];
+
+  loyal_player_list: any = [];
+  page: number = 1;
+
+  config = {
+    itemsPerPage: 10,
+    currentPage: 1
+  }
+
   constructor(public webService: WebService) {}
 
   ngOnInit() {
-    if (sessionStorage['loyalPage']) {
-      this.page = Number(sessionStorage['loyalPage']);
-    }
-
-    this.player_list = this.webService.getLoyalPlayers(this.page);
+    this.subscriptions.push(this.webService.getLoyalPlayers().subscribe((response: any) => {
+      this.loyal_player_list = response;
+    }));
   }
 
-  loyalBackPage() {
-    if (this.page > 1) {
-      this.page = this.page - 1;
-      sessionStorage['loyalPage'] = this.page;
-      this.player_list = this.player_list = this.webService.getLoyalPlayers(this.page);
-    }
+  pageChanged(event: any){
+    this.config.currentPage = event;
   }
-
-  loyalNextPage() {
-    this.page = this.page + 1;
-    sessionStorage['loyalPage'] = this.page;
-    this.player_list = this.player_list = this.webService.getLoyalPlayers(this.page);
-  }
-
-  player_list: any = [];
-  page: number = 1;
 }

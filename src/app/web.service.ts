@@ -13,8 +13,8 @@ export class WebService {
   player_list: any
 
   // API that gets data from 'fifaPlayerIndexBE' directory
-  getPlayers(page: number) {
-    return this.http.get('http://localhost:5000/api/v1.0/players?pn=' + page);
+  getPlayers() {
+    return this.http.get('http://localhost:5000/api/v1.0/players');
   }
 
   getPlayer(id: any) {
@@ -110,7 +110,7 @@ export class WebService {
     return this.http.get('http://localhost:5000/api/v1.0/skilled-players');
   }
 
-  getLoyalPlayers(loyalPage: number) {
-    return this.http.get('http://localhost:5000/api/v1.0/loyal-players?pn=' + loyalPage);
+  getLoyalPlayers() {
+    return this.http.get('http://localhost:5000/api/v1.0/loyal-players');
   }
 }

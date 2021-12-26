@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
 import { WebService } from './web.service';
+import { Component } from '@angular/core';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'players',
@@ -7,29 +9,26 @@ import { WebService } from './web.service';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent {
-  constructor(public webService: WebService) {}
-
-  ngOnInit() {
-    if (sessionStorage['page']) {
-      this.page = Number(sessionStorage['page']);
-    }
-    this.player_list = this.webService.getPlayers(this.page);
-  }
-
-  backPage() {
-    if (this.page > 1) {
-      this.page = this.page - 1;
-      sessionStorage['page'] = this.page;
-      this.player_list = this.player_list = this.webService.getPlayers(this.page);
-    }
-  }
-
-  nextPage() {
-    this.page = this.page + 1;
-    sessionStorage['page'] = this.page;
-    this.player_list = this.player_list = this.webService.getPlayers(this.page);
-  }
+  subscriptions: Subscription[] = [];
 
   player_list: any = [];
   page: number = 1;
+
+  config = {
+    itemsPerPage: 24,
+    currentPage: 1
+  }
+
+  constructor(public webService: WebService) {}
+
+  ngOnInit() {
+    this.subscriptions.push(this.webService.getPlayers().subscribe((response: any) => {
+      this.player_list = response;
+    }));
+  }
+
+  pageChanged(event: any){
+    this.config.currentPage = event;
+  }
 }
+

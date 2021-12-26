@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'home',
@@ -11,10 +12,12 @@ export class HomeComponent {
   schweinsteigerImagePath: string;
   neymarImagePath: string;
 
-  constructor() {
+  constructor(public AuthService: AuthService) {
     this.ronaldoImagePath = 'assets/images/home-img/ronaldo.png'
     this.messiImagePath = 'assets/images/home-img/messi.png'
     this.schweinsteigerImagePath = 'assets/images/home-img/schweinsteiger.png'
     this.neymarImagePath = 'assets/images/home-img/neymar.png'
+
+    console.log(this.AuthService.user$)
   }
 }

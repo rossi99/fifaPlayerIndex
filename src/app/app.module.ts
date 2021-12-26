@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { AuthModule } from '@auth0/auth0-angular';
+import { AuthGuard, AuthModule } from '@auth0/auth0-angular';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 // Custom Imports
 import { AppComponent } from './app.component';
@@ -39,6 +40,7 @@ var routes: any = [
   },
   {
     path: 'create-player',
+    canActivate: [AuthGuard],
     component: CreatePlayerComponent
   },
 ];
@@ -48,7 +50,7 @@ var routes: any = [
     AppComponent, PlayersComponent, HomeComponent, PlayerComponent, SkillComponent, LoyalComponent, CreatePlayerComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, RouterModule.forRoot(routes), ReactiveFormsModule,
+    BrowserModule, HttpClientModule, RouterModule.forRoot(routes), ReactiveFormsModule, NgxPaginationModule,
     AuthModule.forRoot({
       domain: 'dev--jll02il.us.auth0.com',
       clientId: 'ZrG6YWJINFIbxakggQ9lVDhQy6NAJapz'

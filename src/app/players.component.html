@@ -2,32 +2,8 @@
     <p class="page-title">Players</p>
 </div>
 
-<div class="pagination-container">
-    <div class="back-btn-container">
-        <div class="action-btn-container text-start">
-            <button (click)="backPage()" class="action-btn">
-              <div class="btn-txt">
-                  <span class="fas fa-angle-double-left icon-spacing-back"></span>
-                  <span>BACK</span>
-              </div>
-            </button>
-        </div>
-    </div>
-
-    <div class="next-btn-container">
-        <div class="action-btn-container text-end">
-            <button (click)="nextPage()" class="action-btn">
-              <div class="btn-txt">
-                  <span>NEXT</span>
-                  <span class="fas fa-angle-double-right icon-spacing-next"></span>
-              </div>
-            </button>
-        </div>
-    </div>
-</div>
-
 <div class="card-holder">
-    <div *ngFor="let player of player_list | async">
+    <div *ngFor="let player of player_list | paginate: config">
         <!-- Check weather player is outfields or Goalkeeper-->
         <ng-container *ngIf="player.club_position == 'GK'; then goalkeeperCard; else outfieldCard"></ng-container>
         <!-- goalkeeper -->
@@ -105,5 +81,11 @@
                 </div>
             </div>
         </ng-template>
+    </div>
+</div>
+
+<div class="pagination-container">
+    <div class="has-text-centered" style="margin: auto;">
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
     </div>
 </div>

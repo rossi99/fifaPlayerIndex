@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WebService } from './web.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'player',
@@ -9,7 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent {
-  constructor(public webService: WebService, private route: ActivatedRoute, private formBuilder: FormBuilder) {}
+  constructor(public webService: WebService, private route: ActivatedRoute, private formBuilder: FormBuilder, public AuthService: AuthService) {}
 
   reviewForm: any;
 
