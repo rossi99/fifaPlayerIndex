@@ -13,6 +13,7 @@ export class PlayerComponent {
   constructor(public webService: WebService, private route: ActivatedRoute, private formBuilder: FormBuilder, public AuthService: AuthService) {}
 
   reviewForm: any;
+  deleteForm: any;
 
   ngOnInit() {
     this.reviewForm = this.formBuilder.group({
@@ -26,11 +27,15 @@ export class PlayerComponent {
   }
 
   onSubmit() {
-    this.webService.postReview(this.reviewForm.value)
+    this.webService.postReview(this.route.snapshot.params['id'], this.reviewForm.value)
       .subscribe((response: any) => {
         this.reviewForm.reset();
         this.reviews = this.webService.getReviews(this.route.snapshot.params['id'])
       });
+  }
+
+  deleteAPlayer() {
+    this.webService.deletePlayer(this.route.snapshot.params['id']).subscribe((response: any) => {});
   }
 
   isInvalid(control: any) {

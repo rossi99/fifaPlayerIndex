@@ -1,0 +1,84 @@
+<div *ngFor="let player of player | async">
+    <div class="heading">
+        <p class="page-title">{{ player.short_name }}'s Review</p>
+    </div>
+</div>
+
+<div *ngFor="let review of player_review | async">
+    <div class="review-row glass-effect">
+        <div class="review-content">
+            <div class="reviewer-pic-container">
+                <div class="reviewer-pic">
+                    <img [src]="selected_img" alt="Reviewer Avatar" style="width: 100%;">
+                </div>
+            </div>
+
+            <div class="review-data-container">
+                <div class="flex-align">
+                    <div class="reviewer-name">{{ review.username }}</div>
+                    <div class="review-comment">{{ review.comments }}</div>
+                </div>
+            </div>
+
+            <div class="review-rating-container">
+                <div class="rating-star-align">
+                    <ng-container *ngIf="review.rating == '1'; then OneStarReview;"></ng-container>
+                    <ng-container *ngIf="review.rating == '2'; then TwoStarReview;"></ng-container>
+                    <ng-container *ngIf="review.rating == '3'; then ThreeStarReview;"></ng-container>
+                    <ng-container *ngIf="review.rating == '4'; then FourStarReview;"></ng-container>
+                    <ng-container *ngIf="review.rating == '5'; then FiveStarReview;"></ng-container>
+
+                    <ng-template #OneStarReview>
+                        <span class="fas fa-star icon-spacing"></span>
+                    </ng-template>
+
+                    <ng-template #TwoStarReview>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                    </ng-template>
+
+                    <ng-template #ThreeStarReview>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                    </ng-template>
+
+                    <ng-template #FourStarReview>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                    </ng-template>
+
+                    <ng-template #FiveStarReview>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                        <span class="fas fa-star icon-spacing"></span>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <ng-container *ngIf="AuthService.isAuthenticated$ | async;"> -->
+    <div class="auth-actions-container">
+        <div class="edit-action-container">
+            <button type="button" class="edit-action-btn" (click)="deleteAPlayerReview()">
+                  <div style="padding-block: 7px;">
+                      <span class="far fa-edit icon-spacing"></span><span>Edit</span>
+                  </div>
+                </button>
+        </div>
+
+        <div class="delete-action-container">
+            <button type="button" class="delete-action-btn" (click)="deleteAPlayerReview()">
+                  <div style="padding-block: 7px;">
+                      <span class="far fa-trash-alt icon-spacing"></span><span>Delete</span>
+                  </div>
+              </button>
+        </div>
+    </div>
+    <!-- </ng-container> -->
+</div>

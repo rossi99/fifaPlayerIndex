@@ -11,6 +11,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { PlayersComponent } from './players.component';
 import { PlayerComponent } from './player.component';
+import { PlayerReviewComponent } from './review.component';
 import { HomeComponent } from './home.component';
 import { SkillComponent } from './skill.component';
 import { LoyalComponent } from './loyal.component';
@@ -31,6 +32,10 @@ var routes: any = [
     component: PlayerComponent
   },
   {
+    path: 'players/:id/reviews/:rid',
+    component: PlayerReviewComponent
+  },
+  {
     path: 'skilled-players',
     component: SkillComponent
   },
@@ -47,7 +52,7 @@ var routes: any = [
 
 @NgModule({
   declarations: [
-    AppComponent, PlayersComponent, HomeComponent, PlayerComponent, SkillComponent, LoyalComponent, CreatePlayerComponent
+    AppComponent, PlayersComponent, HomeComponent, PlayerComponent, PlayerReviewComponent, SkillComponent, LoyalComponent, CreatePlayerComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), ReactiveFormsModule, NgxPaginationModule,

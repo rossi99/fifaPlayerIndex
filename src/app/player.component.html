@@ -86,6 +86,28 @@
         </ng-template>
     </div>
 
+    <ng-container *ngIf="AuthService.isAuthenticated$ | async;">
+        <div class="auth-actions-container">
+            <div class="edit-action-container">
+                <button type="button" class="edit-action-btn" (click)="deleteAPlayer()">
+                  <div style="padding-block: 7px;">
+                      <span class="far fa-edit icon-spacing"></span><span>Edit</span>
+                  </div>
+                </button>
+            </div>
+
+            <div class="delete-action-container">
+                <button type="button" class="delete-action-btn" (click)="deleteAPlayer()" [routerLink]="['/']">
+                    <div style="padding-block: 7px;">
+                        <span class="far fa-trash-alt icon-spacing"></span><span>Delete</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="clearFix"></div>
+        </div>
+    </ng-container>
+
     <div class="all-stats-container glass-effect">
         <ng-container *ngIf="player.club_position == 'GK'; then goalkeeperStats; else outfieldStats"></ng-container>
 
@@ -453,7 +475,7 @@
 
 <div class="all-reviews-container">
     <div *ngFor="let review of reviews | async">
-        <div class="review-row glass-effect">
+        <div class="review-row glass-effect" [routerLink]="['reviews', review._id]">
             <div class="review-content">
                 <div class="reviewer-pic-container">
                     <div class="reviewer-pic">
@@ -517,9 +539,8 @@
 </div>
 
 <div class="form-container">
-    <div class="form glass-effect">
-
-        <ng-container *ngIf="AuthService.isAuthenticated$ | async; else loggedOut">
+    <ng-container *ngIf="AuthService.isAuthenticated$ | async; else loggedOut">
+        <div class="form glass-effect">
             <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
                 <div class="form-inputs">
                     <div class="form-row">
@@ -589,12 +610,12 @@
 
                 <div class="clearfix"></div>
             </form>
-        </ng-container>
+        </div>
+    </ng-container>
 
-        <ng-template #loggedOut>
-            <div class="incomplete-message-container" style="padding-block-start: 20px;">
-                <p class="incomplete-message">You Must Be Signed In To Leave A Review</p>
-            </div>
-        </ng-template>
-    </div>
+    <ng-template #loggedOut>
+        <div class="incomplete-message-container" style="padding-block-start: 20px;">
+            <p class="incomplete-message">You Must Be Signed In To Leave A Review</p>
+        </div>
+    </ng-template>
 </div>
