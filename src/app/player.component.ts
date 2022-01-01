@@ -12,9 +12,6 @@ import { AuthService } from '@auth0/auth0-angular';
 export class PlayerComponent {
   constructor(public webService: WebService, private route: ActivatedRoute, private formBuilder: FormBuilder, public AuthService: AuthService) {}
 
-  reviewForm: any;
-  deleteForm: any;
-
   ngOnInit() {
     this.reviewForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -52,6 +49,7 @@ export class PlayerComponent {
 
   player_list: any = [];
   reviews: any = [];
+  reviewForm: any;
 
   // string vars to hold image path
   guy1 = 'assets/images/avatars/guy1.png'

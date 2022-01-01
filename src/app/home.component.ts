@@ -17,7 +17,5 @@ export class HomeComponent {
     this.messiImagePath = 'assets/images/home-img/messi.png'
     this.schweinsteigerImagePath = 'assets/images/home-img/schweinsteiger.png'
     this.neymarImagePath = 'assets/images/home-img/neymar.png'
-
-    console.log(this.AuthService.user$)
   }
 }

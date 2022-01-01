@@ -9,6 +9,19 @@
     margin-block-end: 40px;
 }
 
+input {
+    opacity: 50%;
+}
+
+input:hover {
+    cursor: pointer;
+    opacity: 100%;
+}
+
+input:focus {
+    opacity: 100%;
+}
+
 .player-card-section {
     width: 100%;
     margin-block-end: 40px;
@@ -20,7 +33,7 @@
     margin: auto;
     margin-block-start: 10px;
     margin-block-end: 10px;
-    background-image: url('./card/create/blank-card.png');
+    background-image: url('./card/outfield/basic.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
@@ -75,6 +88,66 @@
     left: 81px;
     top: 102px;
     font-size: 20px;
+}
+
+.player-country {
+    width: 35px;
+    height: 22.5px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 80px;
+    top: 137px;
+}
+
+.nationality-align {
+    width: 100%;
+    height: 22.5px;
+    text-align: center;
+}
+
+.nationality {
+    height: 22.5px;
+}
+
+.player-club {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 80px;
+    top: 170px;
+}
+
+.club-align {
+    width: 100%;
+    height: 42.5px;
+    text-align: center;
+}
+
+.club {
+    height: 100%;
+}
+
+.player-photo {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 186px;
+    top: 75px;
+}
+
+.player-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.photo {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .player-name {

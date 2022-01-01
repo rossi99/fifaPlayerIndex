@@ -89,11 +89,11 @@
     <ng-container *ngIf="AuthService.isAuthenticated$ | async;">
         <div class="auth-actions-container">
             <div class="edit-action-container">
-                <button type="button" class="edit-action-btn" (click)="deleteAPlayer()">
-                  <div style="padding-block: 7px;">
-                      <span class="far fa-edit icon-spacing"></span><span>Edit</span>
-                  </div>
-                </button>
+                <div class="edit-action-btn" [routerLink]="['edit']">
+                    <div style="padding-block: 7px;">
+                        <span class="far fa-edit icon-spacing"></span><span>Edit</span>
+                    </div>
+                </div>
             </div>
 
             <div class="delete-action-container">

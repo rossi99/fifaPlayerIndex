@@ -13,7 +13,6 @@ export class CreatePlayerComponent {
   constructor(public webService: WebService, private route: ActivatedRoute, private formBuilder: FormBuilder) {}
 
   playerForm: any;
-  dateTime = new Date();
 
   ngOnInit() {
     this.playerForm = this.formBuilder.group({
@@ -89,8 +88,6 @@ export class CreatePlayerComponent {
       .subscribe((response: any) => {
         this.playerForm.reset();
       });
-
-      console.log(this.playerForm)
   }
 
   isInvalid(control: any) {

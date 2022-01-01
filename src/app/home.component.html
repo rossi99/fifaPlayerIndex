@@ -73,11 +73,18 @@
                 Build you own fifa card or change the cards that are ready exist! Every feild is customizable, from the players name to their rating and even the club and country they play for.
             </div>
 
-            <a>
-                <div class="action-btn">
-                    <p>Build Now</p>
-                </div>
-            </a>
+            <ng-container *ngIf="AuthService.isAuthenticated$ | async; else loggedOut">
+                <a [routerLink]="['/create-player']">
+                    <div class="action-btn">
+                        <p>Build Now</p>
+                    </div>
+                </a>
+            </ng-container>
+
+            <ng-template #loggedOut>
+                <p class="plain-text" style="font-style: italic;">You must be logged in to create a card</p>
+            </ng-template>
+
         </div>
     </div>
 </div>
