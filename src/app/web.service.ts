@@ -23,136 +23,136 @@ export class WebService {
   }
 
   postPlayer(player: any) {
-    let postData = new FormData();
+    let addPlayer = new FormData();
 
     // Card Input
-    postData.append("rating", player.rating);
-    postData.append("position", player.position);
-    postData.append("club", player.club);
-    postData.append("nation", player.nation);
-    postData.append("image", player.image);
-    postData.append("name", player.name);
-    postData.append("pace", player.pace);
-    postData.append("shooting", player.shooting);
-    postData.append("passing", player.passing);
-    postData.append("dribbling", player.dribbling);
-    postData.append("defending", player.defending);
-    postData.append("physic", player.physic);
+    addPlayer.append("rating", player.rating);
+    addPlayer.append("position", player.position);
+    addPlayer.append("club", player.club);
+    addPlayer.append("nation", player.nation);
+    addPlayer.append("image", player.image);
+    addPlayer.append("name", player.name);
+    addPlayer.append("pace", player.pace);
+    addPlayer.append("shooting", player.shooting);
+    addPlayer.append("passing", player.passing);
+    addPlayer.append("dribbling", player.dribbling);
+    addPlayer.append("defending", player.defending);
+    addPlayer.append("physic", player.physic);
 
     // Stats Input
     //  - Pace
-    postData.append("acceleration", player.acceleration);
-    postData.append("speed", player.speed);
+    addPlayer.append("acceleration", player.acceleration);
+    addPlayer.append("speed", player.speed);
 
     //  - Shooting
-    postData.append("positioning", player.positioning);
-    postData.append("finishing", player.finishing);
-    postData.append("shotPower", player.shotPower);
-    postData.append("longShots", player.longShots);
-    postData.append("volleys", player.volleys);
-    postData.append("penalties", player.penalties);
+    addPlayer.append("positioning", player.positioning);
+    addPlayer.append("finishing", player.finishing);
+    addPlayer.append("shotPower", player.shotPower);
+    addPlayer.append("longShots", player.longShots);
+    addPlayer.append("volleys", player.volleys);
+    addPlayer.append("penalties", player.penalties);
 
     //  - Passing
-    postData.append("vision", player.vision);
-    postData.append("crossing", player.crossing);
-    postData.append("freeKickAccuracy", player.freeKickAccuracy);
-    postData.append("shortPassing", player.shortPassing);
-    postData.append("longPassing", player.longPassing);
-    postData.append("curve", player.curve);
+    addPlayer.append("vision", player.vision);
+    addPlayer.append("crossing", player.crossing);
+    addPlayer.append("freeKickAccuracy", player.freeKickAccuracy);
+    addPlayer.append("shortPassing", player.shortPassing);
+    addPlayer.append("longPassing", player.longPassing);
+    addPlayer.append("curve", player.curve);
 
     //  - Dribbling
-    postData.append("agility", player.agility);
-    postData.append("balance", player.balance);
-    postData.append("reactions", player.reactions);
-    postData.append("ballControl", player.ballControl);
-    postData.append("skillDribbling", player.skillDribbling);
-    postData.append("composure", player.composure);
+    addPlayer.append("agility", player.agility);
+    addPlayer.append("balance", player.balance);
+    addPlayer.append("reactions", player.reactions);
+    addPlayer.append("ballControl", player.ballControl);
+    addPlayer.append("skillDribbling", player.skillDribbling);
+    addPlayer.append("composure", player.composure);
 
     //  - Defending
-    postData.append("interceptions", player.interceptions);
-    postData.append("headingAccuracy", player.headingAccuracy);
-    postData.append("defensiveAwareness", player.defensiveAwareness);
-    postData.append("standingTackle", player.standingTackle);
-    postData.append("slidingTackle", player.slidingTackle);
+    addPlayer.append("interceptions", player.interceptions);
+    addPlayer.append("headingAccuracy", player.headingAccuracy);
+    addPlayer.append("defensiveAwareness", player.defensiveAwareness);
+    addPlayer.append("standingTackle", player.standingTackle);
+    addPlayer.append("slidingTackle", player.slidingTackle);
 
     //  - Physical
-    postData.append("jumping", player.jumping);
-    postData.append("stamina", player.stamina);
-    postData.append("strength", player.strength);
-    postData.append("aggression", player.aggression);
+    addPlayer.append("jumping", player.jumping);
+    addPlayer.append("stamina", player.stamina);
+    addPlayer.append("strength", player.strength);
+    addPlayer.append("aggression", player.aggression);
 
     //  - Skill Moves
-    postData.append("skillMoves", player.skillMoves);
+    addPlayer.append("skillMoves", player.skillMoves);
 
     //  - Weak Foot
-    postData.append("weakFoot", player.weakFoot);
+    addPlayer.append("weakFoot", player.weakFoot);
 
     //  - Club joined
-    postData.append("clubJoined", player.clubJoined);
+    addPlayer.append("clubJoined", player.clubJoined);
 
-    return this.http.post('http://localhost:5000/api/v1.0/players', postData);
+    return this.http.post('http://localhost:5000/api/v1.0/players', addPlayer);
   }
 
   editPlayer(id: any, player: any) {
-    let postData = new FormData();
+    let editPlayer = new FormData();
 
     // Card Input
-    postData.append("rating", player.rating);
-    postData.append("position", player.position);
-    postData.append("club", player.club);
-    postData.append("nation", player.nation);
-    postData.append("image", player.image);
-    postData.append("name", player.name);
-    postData.append("pace", player.pace);
-    postData.append("shooting", player.shooting);
-    postData.append("passing", player.passing);
-    postData.append("dribbling", player.dribbling);
-    postData.append("defending", player.defending);
-    postData.append("physic", player.physic);
+    editPlayer.append("rating", player.rating);
+    editPlayer.append("position", player.position);
+    editPlayer.append("club", player.club);
+    editPlayer.append("nation", player.nation);
+    editPlayer.append("image", player.image);
+    editPlayer.append("name", player.name);
+    editPlayer.append("pace", player.pace);
+    editPlayer.append("shooting", player.shooting);
+    editPlayer.append("passing", player.passing);
+    editPlayer.append("dribbling", player.dribbling);
+    editPlayer.append("defending", player.defending);
+    editPlayer.append("physic", player.physic);
 
     // Stats Input
     //  - Pace
-    postData.append("acceleration", player.acceleration);
-    postData.append("speed", player.speed);
+    editPlayer.append("acceleration", player.acceleration);
+    editPlayer.append("speed", player.speed);
 
     //  - Shooting
-    postData.append("positioning", player.positioning);
-    postData.append("finishing", player.finishing);
-    postData.append("shotPower", player.shotPower);
-    postData.append("longShots", player.longShots);
-    postData.append("volleys", player.volleys);
-    postData.append("penalties", player.penalties);
+    editPlayer.append("positioning", player.positioning);
+    editPlayer.append("finishing", player.finishing);
+    editPlayer.append("shotPower", player.shotPower);
+    editPlayer.append("longShots", player.longShots);
+    editPlayer.append("volleys", player.volleys);
+    editPlayer.append("penalties", player.penalties);
 
     //  - Passing
-    postData.append("vision", player.vision);
-    postData.append("crossing", player.crossing);
-    postData.append("freeKickAccuracy", player.freeKickAccuracy);
-    postData.append("shortPassing", player.shortPassing);
-    postData.append("longPassing", player.longPassing);
-    postData.append("curve", player.curve);
+    editPlayer.append("vision", player.vision);
+    editPlayer.append("crossing", player.crossing);
+    editPlayer.append("freeKickAccuracy", player.freeKickAccuracy);
+    editPlayer.append("shortPassing", player.shortPassing);
+    editPlayer.append("longPassing", player.longPassing);
+    editPlayer.append("curve", player.curve);
 
     //  - Dribbling
-    postData.append("agility", player.agility);
-    postData.append("balance", player.balance);
-    postData.append("reactions", player.reactions);
-    postData.append("ballControl", player.ballControl);
-    postData.append("skillDribbling", player.skillDribbling);
-    postData.append("composure", player.composure);
+    editPlayer.append("agility", player.agility);
+    editPlayer.append("balance", player.balance);
+    editPlayer.append("reactions", player.reactions);
+    editPlayer.append("ballControl", player.ballControl);
+    editPlayer.append("skillDribbling", player.skillDribbling);
+    editPlayer.append("composure", player.composure);
 
     //  - Defending
-    postData.append("interceptions", player.interceptions);
-    postData.append("headingAccuracy", player.headingAccuracy);
-    postData.append("defensiveAwareness", player.defensiveAwareness);
-    postData.append("standingTackle", player.standingTackle);
-    postData.append("slidingTackle", player.slidingTackle);
+    editPlayer.append("interceptions", player.interceptions);
+    editPlayer.append("headingAccuracy", player.headingAccuracy);
+    editPlayer.append("defensiveAwareness", player.defensiveAwareness);
+    editPlayer.append("standingTackle", player.standingTackle);
+    editPlayer.append("slidingTackle", player.slidingTackle);
 
     //  - Physical
-    postData.append("jumping", player.jumping);
-    postData.append("stamina", player.stamina);
-    postData.append("strength", player.strength);
-    postData.append("aggression", player.aggression);
+    editPlayer.append("jumping", player.jumping);
+    editPlayer.append("stamina", player.stamina);
+    editPlayer.append("strength", player.strength);
+    editPlayer.append("aggression", player.aggression);
 
-    return this.http.put('http://localhost:5000/api/v1.0/players/' + id + '/edit', postData);
+    return this.http.put('http://localhost:5000/api/v1.0/players/' + id + '/edit', editPlayer);
   }
 
   deletePlayer(id: any) {
@@ -168,12 +168,21 @@ export class WebService {
   }
 
   postReview(id: any, review: any) {
-    let postData = new FormData();
-    postData.append("username", review.name);
-    postData.append("comments", review.review);
-    postData.append("rating", review.stars);
+    let addReview = new FormData();
+    addReview.append("username", review.name);
+    addReview.append("comments", review.review);
+    addReview.append("rating", review.stars);
 
-    return this.http.post('http://localhost:5000/api/v1.0/players/' + id + '/reviews', postData);
+    return this.http.post('http://localhost:5000/api/v1.0/players/' + id + '/reviews', addReview);
+  }
+
+  editReview(id: any, rid: any, review: any) {
+    let editReview = new FormData();
+    editReview.append("username", review.name);
+    editReview.append("comments", review.review);
+    editReview.append("rating", review.stars);
+
+    return this.http.put('http://localhost:5000/api/v1.0/players/' + id + '/reviews/' + rid + '/edit', editReview);
   }
 
   deletePlayerReview(id: any, rid: any) {

@@ -15,6 +15,7 @@ import { PlayerComponent } from './player.component';
 import { PlayerReviewComponent } from './review.component';
 import { HomeComponent } from './home.component';
 import { EditPlayerComponent } from './editplayer.component';
+import { EditReviewComponent } from './editreview.component';
 import { SkillComponent } from './skill.component';
 import { LoyalComponent } from './loyal.component';
 import { CreatePlayerComponent } from './create.component';
@@ -42,6 +43,10 @@ var routes: any = [
     component: PlayerReviewComponent
   },
   {
+    path: 'players/:id/reviews/:rid/edit',
+    component: EditReviewComponent
+  },
+  {
     path: 'skilled-players',
     component: SkillComponent
   },
@@ -58,10 +63,12 @@ var routes: any = [
 
 @NgModule({
   declarations: [
-    AppComponent, PlayersComponent, HomeComponent, PlayerComponent, PlayerReviewComponent, EditPlayerComponent, SkillComponent, LoyalComponent, CreatePlayerComponent
+    AppComponent, PlayersComponent, HomeComponent, PlayerComponent, PlayerReviewComponent, EditPlayerComponent,
+    SkillComponent, LoyalComponent, CreatePlayerComponent, EditReviewComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, RouterModule.forRoot(routes), ReactiveFormsModule, NgxPaginationModule, FormsModule,
+    BrowserModule, HttpClientModule, RouterModule.forRoot(routes), ReactiveFormsModule, NgxPaginationModule,
+    FormsModule,
     AuthModule.forRoot({
       domain: 'dev--jll02il.us.auth0.com',
       clientId: 'ZrG6YWJINFIbxakggQ9lVDhQy6NAJapz'
