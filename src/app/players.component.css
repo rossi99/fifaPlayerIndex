@@ -9,6 +9,12 @@
     height: 80px;
     display: flex;
     align-items: center;
+    margin-block-start: 50px;
+}
+
+.has-text-centered {
+    width: 100%;
+    text-align: center;
 }
 
 .back-btn-container {
