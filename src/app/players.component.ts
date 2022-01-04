@@ -11,11 +11,12 @@ import { Subscription } from 'rxjs';
 export class PlayersComponent {
   subscriptions: Subscription[] = [];
 
+  searchText: string = '';
   player_list: any = [];
   page: number = 1;
 
   config = {
-    itemsPerPage: 24,
+    itemsPerPage: 18,
     currentPage: 1
   }
 

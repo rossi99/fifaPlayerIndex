@@ -1,5 +1,7 @@
 <div class="heading">
-    <p class="page-title">Players</p>
+    <div class="page-heading-container">
+        <p class="page-title">Players</p>
+    </div>
 </div>
 
 <div class="card-holder">
@@ -82,10 +84,32 @@
             </div>
         </ng-template>
     </div>
-</div>
 
-<div class="pagination-container">
-    <div class="has-text-centered" style="margin: auto;">
-        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    <div class="pagination-container">
+        <div class="has-text-centered" style="margin: auto;">
+            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+        </div>
     </div>
 </div>
+
+<div class="search-container">
+    <div class="search-bar-holder">
+        <input type="search" class="search-bar" [(ngModel)]="searchText" placeholder="Search players by name...">
+    </div>
+
+    <div class="results-container">
+        <div *ngFor="let player of player_list | filter: 'short_name': searchText">
+            <div class="results-row" [routerLink]="['/players', player._id]">
+                <div class="results-img-container">
+                    <img [src]="player.player_face_url" [alt]="player.short_name" class="results-img">
+                </div>
+
+                <div class="results-name-container">
+                    <p>{{ player.short_name }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearFix"></div>

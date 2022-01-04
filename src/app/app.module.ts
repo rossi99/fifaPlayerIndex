@@ -20,6 +20,7 @@ import { SkillComponent } from './skill.component';
 import { LoyalComponent } from './loyal.component';
 import { CreatePlayerComponent } from './create.component';
 import { WebService } from './web.service';
+import { FilterPipe } from './filter.pipe';
 
 var routes: any = [
   {
@@ -64,7 +65,7 @@ var routes: any = [
 @NgModule({
   declarations: [
     AppComponent, PlayersComponent, HomeComponent, PlayerComponent, PlayerReviewComponent, EditPlayerComponent,
-    SkillComponent, LoyalComponent, CreatePlayerComponent, EditReviewComponent
+    SkillComponent, LoyalComponent, CreatePlayerComponent, EditReviewComponent, FilterPipe
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), ReactiveFormsModule, NgxPaginationModule,

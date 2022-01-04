@@ -4,6 +4,10 @@
     margin-block-end: 20px;
 }
 
+.page-heading-container {
+    width: 100%;
+}
+
 .pagination-container {
     width: 100%;
     height: 80px;
@@ -15,22 +19,6 @@
 .has-text-centered {
     width: 100%;
     text-align: center;
-}
-
-.back-btn-container {
-    width: 50%;
-    height: 40px;
-    float: left;
-    display: flex;
-    align-items: center;
-}
-
-.next-btn-container {
-    width: 50%;
-    height: 40px;
-    float: right;
-    display: flex;
-    align-items: center;
 }
 
 .action-btn-container {
@@ -59,11 +47,12 @@
 }
 
 .card-holder {
-    width: 100%;
+    width: 75%;
+    float: left;
 }
 
 .card-container {
-    width: 25%;
+    width: calc(100% / 3);
     float: left;
 }
 
@@ -243,4 +232,66 @@
     top: 215px;
     font-weight: 200;
     font-size: 15px;
+}
+
+.search-container {
+    width: 25%;
+    float: left;
+}
+
+.search-bar-holder {
+    width: 95%;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 10px;
+    margin-block-end: 20px;
+}
+
+.search-bar {
+    width: 95%;
+    margin: auto;
+    border: none;
+    background: none;
+}
+
+.results-container {
+    width: 95%;
+    margin: auto;
+}
+
+.results-row {
+    width: 100%;
+    height: 50px;
+    margin-block: 10px;
+    padding-inline: 5px;
+    opacity: 50%;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.results-row:hover {
+    cursor: pointer;
+    opacity: 100%;
+}
+
+.results-img-container {
+    width: 30%;
+    height: 50px;
+    float: left;
+}
+
+.results-img {
+    height: 49px;
+}
+
+.results-name-container {
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    float: left;
 }
