@@ -62,23 +62,23 @@
         </div>
     </div>
 
-    <!-- <ng-container *ngIf="AuthService.isAuthenticated$ | async;"> -->
-    <div class="auth-actions-container">
-        <div class="edit-action-container">
-            <div class="edit-action-btn" [routerLink]="['edit']">
-                <div style="padding-block: 7px;">
-                    <span class="far fa-edit icon-spacing"></span><span>Edit</span>
+    <ng-container *ngIf="AuthService.isAuthenticated$ | async;">
+        <div class="auth-actions-container">
+            <div class="edit-action-container">
+                <div class="edit-action-btn" [routerLink]="['edit']">
+                    <div style="padding-block: 7px;">
+                        <span class="far fa-edit icon-spacing"></span><span>Edit</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="delete-action-container">
-            <button type="button" class="delete-action-btn" (click)="deleteAPlayerReview()">
+            <div class="delete-action-container">
+                <button type="button" class="delete-action-btn" (click)="deleteAPlayerReview()">
                   <div style="padding-block: 7px;">
                       <span class="far fa-trash-alt icon-spacing"></span><span>Delete</span>
                   </div>
               </button>
+            </div>
         </div>
-    </div>
-    <!-- </ng-container> -->
+    </ng-container>
 </div>
